@@ -938,4 +938,10 @@ var_dump($this->form_validation); exit;
         $method = ($multi) ? 'result' : 'row';
         return $this->_temporary_return_type == 'array' ? $method . '_array' : $method;
     }
+
+    protected function timestamps($user)
+    {
+        $user['created_at'] = $user['updated_at'] = date('Y-m-d H:i:s');
+        return $user;
+    }
 }

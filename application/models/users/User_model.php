@@ -4,6 +4,7 @@ class User_model extends MY_Model
 {
     public $_table = 'user';
     public $primary_key = 'userId';
+    public $before_create = array( 'timestamps' );
     public $validate = array(
             array(
                 'field' => 'accountId',
@@ -31,4 +32,5 @@ class User_model extends MY_Model
                 'rules' => 'trim|required|min_length[8]'
             ),
         );
+
 }
